@@ -23,8 +23,15 @@ const modificateVehicle=async(req)=>{
             id_veh: req.id_veh
         }
     })
-    return modificateVehicle
+    if(modificateVehicle===0) return 'No se ha podido modificar'
     return 'Vehiculo modificado correctamente'
 }
+const deleteVehicle=async(req)=>{
+    const deleteVehicle= await Vehiculos.destroy({where:{
+        id_veh: req
+    }})
+    if(deleteVehicle===0) return 'No se ha podido eliminar'
+    return 'Vehiculo eliminado correctamente'
+}
 
-module.exports= {getAllVehiculos, getOneVehicle,modificateVehicle}
+module.exports= {getAllVehiculos, getOneVehicle,modificateVehicle,deleteVehicle}

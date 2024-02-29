@@ -13,5 +13,8 @@ const modificateVehicle=async(req,res)=>{
     const modificateVehicle= await vehiculosService.modificateVehicle(req.body)
     res.json(modificateVehicle)
 }
-
-module.exports={getAllVehiculos, getOneVehicle, modificateVehicle}
+const deleteVehicle=async(req,res)=>{
+    const deleteVehicle= await vehiculosService.deleteVehicle(req.params.id)
+    res.json(deleteVehicle)
+}
+module.exports={getAllVehiculos, getOneVehicle, modificateVehicle,deleteVehicle}
