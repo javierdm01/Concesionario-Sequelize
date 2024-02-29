@@ -21,6 +21,10 @@ Fabricante.init({
     telefono_fab:{
         type: DataTypes.STRING,
         allowNull:false
+    },
+    fechanac_fab:{
+        type: DataTypes.DATE,
+        allowNull:false
     }
 },{sequelize, modelName:'Fabricante',timestamps:false})
 

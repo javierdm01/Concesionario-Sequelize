@@ -4,22 +4,22 @@ const {Model, DataTypes}= require('sequelize')
 class Vehiculo extends Model{}
 
 Vehiculo.init({
-    id_fab:{
+    id_veh:{
         type: DataTypes.INTEGER,
         autoIncrement: false,
         allowNull: false,
         primaryKey: true
     },
-    nombre_fab:{
+    nombre_veh:{
         type: DataTypes.STRING,
         allowNull:false
     },
-    direccion_fab:{
-        type: DataTypes.STRING,
+    unidades_veh:{
+        type: DataTypes.INTEGER,
         allowNull:false
     },
-    telefono_fab:{
-        type: DataTypes.STRING,
+    precio_veh:{
+        type: DataTypes.FLOAT,
         allowNull:false
     }
 },{modelName:'Vehiculo', sequelize, timestamps:false})
