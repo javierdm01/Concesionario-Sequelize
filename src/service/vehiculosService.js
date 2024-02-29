@@ -18,7 +18,8 @@ const getOneVehicle=async(nombre)=>{
 }
 const modificateVehicle=async(req)=>{
     //Preguntar si se puede modificar las foreing key y como hacerlo
-    const modificateVehicle= await Vehiculos.update({nombre_veh: req.nombre_veh,unidades_veh: req.unidades_veh,precio_veh: req.precio_veh,fabricanteIdFab: req.fabricanteIdFab},{
+    const modificateVehicle= await Vehiculos.update({nombre_veh: req.nombre_veh,unidades_veh: req.unidades_veh,
+        precio_veh: req.precio_veh,fabricanteIdFab: req.fabricanteIdFab},{
         where:{
             id_veh: req.id_veh
         }

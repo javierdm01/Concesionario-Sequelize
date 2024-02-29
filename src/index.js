@@ -10,7 +10,9 @@ require('./db/associations')
 const router= require('./routes/appRoutes')
 
 
-app.use(express.json())
+//app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use('/', router)
 const PORT= process.env.PORT || 3000

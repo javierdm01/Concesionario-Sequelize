@@ -8,8 +8,13 @@ const getAllClientes=async()=>{
 
 // Crear un cliente - INSERT INTO CLIENTE ("DATA") VALUES ("VALUES")
 const createCliente=async(body)=>{
-    const clientes= await Cliente.create(body)
-    return 'Cliente insertado correctamente'
+    try {
+        const clientes= await Cliente.create(body)
+         return 'Cliente insertado correctamente'
+    } catch (error) {
+        return error.errors[0].message;
+    }
+
 }
 
 module.exports= {getAllClientes,createCliente}

@@ -12,7 +12,16 @@ Cliente.init({
     },
     nombre_cli:{
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:false,
+        validate:{
+            notNull:{
+                msg:'El nombre del cliente no puede ser null'
+            },
+            len:{
+                args:[0,2],
+                msg:'El rango del nombre debe de estar entre 0 y 2'
+            }
+        }
     },
     direccion_cli:{
         type: DataTypes.STRING,
