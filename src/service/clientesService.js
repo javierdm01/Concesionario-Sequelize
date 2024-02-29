@@ -6,4 +6,10 @@ const getAllClientes=async()=>{
     return clientes
 }
 
-module.exports= {getAllClientes}
+// Crear un cliente - INSERT INTO CLIENTE ("DATA") VALUES ("VALUES")
+const createCliente=async(body)=>{
+    const clientes= await Cliente.create(body)
+    return 'Cliente insertado correctamente'
+}
+
+module.exports= {getAllClientes,createCliente}
