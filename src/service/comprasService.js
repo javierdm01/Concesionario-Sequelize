@@ -1,4 +1,6 @@
-const Compras= require('../db/models/Compras')
+const Cliente = require('../db/models/Cliente');
+const Compras= require('../db/models/Compras');
+const Vehiculo = require('../db/models/Vehiculo');
 
 
 const createNewCompra=async(param)=>{
@@ -12,4 +14,19 @@ const createNewCompra=async(param)=>{
     }
 }
 
-module.exports= {createNewCompra}
+const getAllCompras=async()=>{
+    const getAllCompras= await Compras.findAll({
+        include:[{
+            model:Vehiculo,
+            attributes:["nombre_veh"]
+        },
+        {
+            model: Cliente,
+            attributes:["nombre_cli"]
+        }],
+        attributes:["fecha_compra","precio_compra"]
+    })
+    return getAllCompras
+}
+
+module.exports= {createNewCompra,getAllCompras}

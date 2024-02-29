@@ -6,5 +6,10 @@ const createNewCompra=async(req,res)=>{
     res.json(createNewCompra)
 }
 
+const getAllCompras=async(req,res)=>{
+    const getAllCompras= await compraService.getAllCompras()
+    res.json(getAllCompras)
+}
 
-module.exports= {createNewCompra}
+
+module.exports= {createNewCompra,getAllCompras}
